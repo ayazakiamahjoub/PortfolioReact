@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Login from './pages/Login';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import './App.css';
@@ -27,6 +29,15 @@ function App() {
             path="/home" 
             element={isLoggedIn ? <Home /> : <Navigate to="/login" />} 
           />
+           <Route 
+            path="/projects" 
+            element={isLoggedIn ? <Projects /> : <Navigate to="/login" />} 
+          />
+          <Route 
+            path="/project/:id" 
+            element={isLoggedIn ? <ProjectDetail /> : <Navigate to="/login" />} 
+          />
+
           <Route 
             path="/contact" 
             element={isLoggedIn ? <Contact /> : <Navigate to="/login" />} 
