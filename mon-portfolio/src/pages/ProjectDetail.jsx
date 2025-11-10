@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import '../Styles/ProjectDetail.css';
 
-// Données temporaires étendues
+
 const projectsData = [
   {
     id: 1,
@@ -25,7 +25,7 @@ const projectsData = [
     title: "Application de Gestion de Projets",
     subtitle: "Solution collaborative pour équipes agile",
     fullDescription: "Application web moderne permettant aux équipes de collaborer efficacement sur leurs projets. Fonctionnalités incluant la gestion des tâches avec diagrammes de Gantt, calendrier partagé, chat en temps réel, stockage de documents, et rapports de progression automatisés. Interface responsive optimisée pour desktop et mobile.",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "CSS", "JWT"],
+    technologies: ["React", "Node.js", "MongoDB", "CSS", "JWT"],
     category: "Développement Web",
     duration: "4 mois",
     status: "En cours",
@@ -37,19 +37,53 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "App Mobile de Suivi Fitness",
-    subtitle: "Application de santé et bien-être",
-    fullDescription: "Application mobile complète de suivi fitness avec planification d'entraînements personnalisés, suivi nutritionnel détaillé, et analyse avancée des performances. Intégration avec les capteurs santé des smartphones (podomètre, calories) et objets connectés (montres intelligentes). Fonctionnalités sociales pour partager ses progrès et défier ses amis.",
-    technologies: ["React Native", "Firebase", "Chart.js", "Health API", "Redux"],
+    title: "App Mobile de Gestion des Contacts",
+    subtitle: "Solution complète pour organiser vos relations professionnelles",
+    fullDescription: "Application mobile intuitive de gestion de contacts professionnels permettant de centraliser et organiser toutes vos relations. Fonctionnalités avancées incluant la synchronisation avec l'annuaire du téléphone, le scan de cartes de visite via OCR, la catégorisation intelligente des contacts, et les rappels automatiques pour le suivi des relations. Interface moderne avec recherche rapide et gestions des groupes.",
+    technologies: ["React Native", "Firebase", "SQLite"],
     category: "Application Mobile",
-    duration: "2 mois",
+    duration: "3 mois",
     status: "Terminé",
-    date: "Décembre 2023",
+    date: "Février 2025",
     links: {
-      github: "https://github.com/username/project3",
-      demo: "https://demo-project3.com"
-    }
+      github: "https://github.com/username/contact-manager",
+      demo: "https://demo-contactapp.com"
   }
+},
+{
+id: 4,
+  title: "Système de Recommendation Data",
+  subtitle: "Algorithme intelligent pour des recommandations personnalisées",
+  fullDescription: "Développement d'un système de recommandation avancé utilisant des techniques de machine learning pour analyser le comportement des utilisateurs et fournir des suggestions personnalisées. Le système intègre du traitement de données massives, de la segmentation d'audience et des algorithmes de filtrage collaboratif. Il permet d'augmenter l'engagement utilisateur de 35% grâce à des recommandations pertinentes et contextuelles.",
+  technologies: ["Python", "Pandas", "Scikit-learn", "Jupyter", "NumPy", "Matplotlib"],
+  category: "Data Science",
+  duration: "3 mois",
+  status: "Terminé",
+  date: "Mars 2024",
+  links: {
+    github: "https://github.com/username/recommendation-system",
+    demo: "https://demo-recommendation.com",
+    documentation: "https://docs-recommendation.com"
+  }
+},
+
+{
+id: 5,
+  title: "DevOnDeck - Plateforme de Développeurs",
+  subtitle: "Marketplace connectant talents tech et opportunités professionnelles",
+  fullDescription: "Plateforme web innovante permettant aux développeurs freelances de présenter leurs compétences et aux entreprises de trouver les talents tech dont elles ont besoin. DevOnDeck facilite la mise en relation grâce à un système de matching intelligent, des outils de collaboration intégrés et un processus de paiement sécurisé. La plateforme inclut un système de reviews, de messagerie en temps réel et de gestion de projets.",
+  technologies: ["React", "Node.js", "MongoDB", "Stripe", "Socket.io", "JWT", "Cloudinary", "Redis"],
+  category: "Développement Web",
+  duration: "5 mois",
+  status: "Terminé",
+  date: "Avril 2024",
+  links: {
+    github: "https://github.com/username/devondeck",
+    demo: "https://devondeck-demo.com",
+    live: "https://devondeck.com"
+  }
+}
+
 ];
 
 const ProjectDetail = () => {
@@ -74,16 +108,16 @@ const ProjectDetail = () => {
 
   return (
     <div className="project-detail-container">
-      {/* En-tête du projet */}
+      
       <div className="project-header">
         <h1 className="project-title">{project.title}</h1>
         <p className="project-subtitle">{project.subtitle}</p>
         <span className="project-category">{project.category}</span>
       </div>
 
-      {/* Contenu principal */}
+      
       <div className="project-content">
-        {/* Section description principale */}
+       
         <div className="project-main">
           <div className="project-description">
             <h2 className="section-title">
@@ -92,7 +126,7 @@ const ProjectDetail = () => {
             </h2>
             <p className="project-full-description">{project.fullDescription}</p>
             
-            {/* Section objectifs */}
+           
             <div className="project-objectives">
               <h3 className="section-title">
                 <i className="fas fa-bullseye"></i>
@@ -108,9 +142,9 @@ const ProjectDetail = () => {
           </div>
         </div>
 
-        {/* Sidebar */}
+        
         <div className="project-sidebar">
-          {/* Technologies */}
+         
           <div className="technologies-section">
             <h3 className="section-title">
               <i className="fas fa-code"></i>
@@ -123,7 +157,7 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          {/* Liens */}
+         
           <div className="links-section">
             <h3 className="section-title">
               <i className="fas fa-external-link-alt"></i>
@@ -151,7 +185,7 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          {/* Informations */}
+          
           <div className="project-info">
             <h3 className="section-title">
               <i className="fas fa-info-circle"></i>
@@ -179,7 +213,7 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      {/* Navigation */}
+      
       <div className="project-navigation">
         <Link to="/projects" className="nav-btn back">
           <i className="fas fa-arrow-left"></i>

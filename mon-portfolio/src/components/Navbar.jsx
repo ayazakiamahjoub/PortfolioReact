@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom'; // ✅ NavLink au lieu de Link
+import { Link, useNavigate } from 'react-router-dom'; 
 import '../Styles/Navbar.css';
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
@@ -13,36 +13,27 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
     <nav className="navbar">
       <div className="nav-brand">
-        <NavLink to="/home"> {/* ✅ NavLink pour le logo aussi */}
+        <Link to="/home"> 
           <i className="fas fa-code"></i> Mon Portfolio
-        </NavLink>
+        </Link>
       </div>
       
       {isLoggedIn && (
         <ul className="nav-links">
           <li>
-            <NavLink 
-              to="/home"
-              className={({ isActive }) => isActive ? 'active' : ''}
-            >
+            <Link to="/home">
               <i className="fas fa-home"></i> Accueil
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink 
-              to="/projects"
-              className={({ isActive }) => isActive ? 'active' : ''}
-            >
+            <Link to="/projects">
               <i className="fas fa-project-diagram"></i> Projets
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink 
-              to="/contact" 
-              className={({ isActive }) => isActive ? 'active' : ''}
-            >
+            <Link to="/contact">
               <i className="fas fa-envelope"></i> Contact
-            </NavLink>
+            </Link>
           </li>
           <li>
             <button onClick={handleLogout} className="logout-btn">
@@ -55,4 +46,4 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   );
 };
 
-export default Navbar;
+export default Navbar;                                                                                                                                            

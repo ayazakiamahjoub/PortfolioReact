@@ -20,20 +20,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .profile-photo {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%; 
   border: 6px solid white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
+  object-fit: cover; 
+  object-position: center; 
   transition: transform 0.3s ease;
 }
 
 .profile-photo:hover {
   transform: scale(1.05);
+}
+
+
+.profile-image::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  z-index: -1;
+  animation: rotate 10s linear infinite;
+}
+
+.profile-image::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px dashed #3b82f6;
+  z-index: -2;
+  opacity: 0.3;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .hero-content h1 {
@@ -96,7 +126,7 @@
   transform: translateY(-2px);
 }
 
-/* Section Compétences */
+
 .skills-section {
   margin-bottom: 4rem;
 }
@@ -222,8 +252,18 @@
   }
   
   .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
+  }
+  
+  .profile-image::before {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .profile-image::after {
+    width: 280px;
+    height: 280px;
   }
   
   .hero-content h1 {
@@ -261,8 +301,19 @@
   }
   
   .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
+    border-width: 4px;
+  }
+  
+  .profile-image::before {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .profile-image::after {
+    width: 240px;
+    height: 240px;
   }
   
   .hero-content h1 {

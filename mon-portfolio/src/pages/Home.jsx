@@ -8,7 +8,8 @@ const Home = () => {
       <section className="hero-section">
         <div className="profile-image">
           <img 
-            alt="Photo de profil" 
+            src="./assets/photoDeProfil.jpeg"
+            alt="Mahjoub Ayakia - Étudiante en Business Intelligence" 
             className="profile-photo"
           />
         </div>

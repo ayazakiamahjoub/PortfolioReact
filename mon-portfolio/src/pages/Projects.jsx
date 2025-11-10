@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import '../Styles/Projects.css';
 
-// Exemple de données de projets
+
 const projectsData = [
   {
     id: 1,
@@ -20,9 +20,9 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "App Mobile de Suivi Fitness",
-    description: "Application mobile pour le suivi des activités sportives et nutritionnelles.",
-    technologies: ["React Native", "Firebase", "Chart.js"],
+    title: "App Mobile de Gestion des Contacts",
+    description: "Application mobile complète pour organiser et gérer vos contacts professionnels avec synchronisation cloud et scan OCR.",
+    technologies: ["React Native", "SQLite"],
     category: "mobile"
   },
   {
@@ -33,19 +33,12 @@ const projectsData = [
     category: "data"
   },
   {
-    id: 5,
-    title: "Site E-commerce",
-    description: "Plateforme de vente en ligne avec panier et système de paiement.",
-    technologies: ["React", "Express.js", "Stripe", "PostgreSQL"],
-    category: "web"
+  id: 5,
+  title: "DevOnDeck - Plateforme de Développeurs",
+  description: "Marketplace connectant développeurs freelances et entreprises pour des missions tech.",
+  technologies: ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
+  category: "web"
   },
-  {
-    id: 6,
-    title: "App de Méditation",
-    description: "Application mobile de méditation guidée avec suivi des progrès.",
-    technologies: ["React Native", "Firebase", "Audio API"],
-    category: "mobile"
-  }
 ];
 
 const Projects = () => {
@@ -101,7 +94,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Grille de projets */}
+   
       <div className="projects-grid">
         {filteredProjects.map((project, index) => (
           <ProjectCard 
@@ -129,7 +122,7 @@ const Projects = () => {
   );
 };
 
-// Helper function pour les labels des catégories
+
 const getCategoryLabel = (category) => {
   const labels = {
     all: 'tous',

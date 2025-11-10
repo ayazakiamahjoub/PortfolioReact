@@ -11,7 +11,7 @@ const Login = ({ setIsLoggedIn }) => {
     e.preventDefault();
     if (email && password) {
       setIsLoggedIn(true);
-        navigate('/home');
+      navigate('/home');
     }
   };
 
@@ -20,7 +20,7 @@ const Login = ({ setIsLoggedIn }) => {
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-header">
           <h2>Connexion</h2>
-          <p>Accédez à votre espace portfolio</p>
+          <p>Accédez à mon espace portfolio</p>
         </div>
         
         <div className="form-group">
@@ -56,14 +56,6 @@ const Login = ({ setIsLoggedIn }) => {
         <button type="submit" className="login-btn">
           <i className="fas fa-sign-in-alt"></i> Se connecter
         </button>
-
-        <div className="login-footer">
-          <div className="demo-credentials">
-            <h4>💡 Identifiants de démonstration :</h4>
-            <p><strong>Email :</strong> demo@portfolio.com</p>
-            <p><strong>Mot de passe :</strong> anypassword</p>
-          </div>
-        </div>
       </form>
     </div>
   );

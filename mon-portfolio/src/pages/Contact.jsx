@@ -24,17 +24,12 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus('');
 
-    
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Message envoyé:', formData);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+     // Version simplifiée - envoi immédiat
+    console.log('Message envoyé:', formData);
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(false);
+
   };
 
   return (
@@ -174,16 +169,9 @@ const Contact = () => {
               ></textarea>
             </div>
           </div>
-
           {submitStatus === 'success' && (
             <div className="form-status success">
               <i className="fas fa-check-circle"></i> Message envoyé avec succès !
-            </div>
-          )}
-
-          {submitStatus === 'error' && (
-            <div className="form-status error">
-              <i className="fas fa-exclamation-circle"></i> Erreur lors de l'envoi. Veuillez réessayer.
             </div>
           )}
 
